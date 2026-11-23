@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Política de cookies · TribuKR Coliving</title>
+  <meta name="description" content="Qué cookies y servicios de terceros usa el sitio de TribuKR Coliving y cómo controlarlos." />
+  <meta name="theme-color" content="#15191a" />
+  <link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../assets/img/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body data-page="legal">
+  <header class="nav is-scrolled">
+    <a class="brand" href="../"><img src="../assets/img/logo.svg" alt="TribuKR" /><span>TRIBU KR<small>coliving</small></span></a>
+    <nav class="nav__links">
+      <a href="../">Inicio</a>
+      <a href="../capitolio/">Capitolio</a>
+      <a href="privacidad.html">Datos personales</a>
+      <a href="terminos.html">Términos</a>
+    </nav>
+    <a class="btn btn-light" data-wa="Hola TribuKR, tengo una pregunta."><span class="lbl">Escríbenos</span><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </header>
+
+  <main class="legal">
+    <div class="wrap">
+      <span class="eyebrow">Legal</span>
+      <h1>Política de <span class="it">cookies</span></h1>
+      <p class="upd">Última actualización: 22 de noviembre de 2026</p>
+
+      <h2>¿Qué son las cookies?</h2>
+      <p>Son pequeños archivos o datos que un sitio guarda en tu navegador para funcionar o recordar tus preferencias.</p>
+
+      <h2>Lo que usa este sitio</h2>
+      <h3>Necesarias (siempre activas)</h3>
+      <ul>
+        <li><b>Preferencia de cookies</b> (almacenamiento local, clave <code>tribu-cookies</code>): recuerda si aceptaste o no las cookies opcionales. No te identifica.</li>
+        <li><b>Transición entre páginas</b> (almacenamiento de sesión, clave <code>tribu-warp</code>): evita repetir la pantalla de carga al entrar a una sede. Se borra al cerrar la pestaña.</li>
+      </ul>
+      <h3>Opcionales (solo si aceptas)</h3>
+      <ul>
+        <li><b>Google Maps:</b> el mapa de ubicación de cada sede lo presta Google, que puede instalar sus propias cookies. Solo se carga si aceptas las cookies o si tocas el botón “Ver mapa”.</li>
+      </ul>
+      <h3>Servicios externos sin cookies propias del sitio</h3>
+      <ul>
+        <li><b>Google Fonts</b> (tipografías) y <b>jsDelivr</b> (librerías de animación): tu navegador se conecta a sus servidores para descargarlas, lo que les permite ver tu dirección IP.</li>
+        <li><b>Google Sheets:</b> la página consulta una hoja pública para mostrar qué habitaciones están disponibles.</li>
+      </ul>
+      <p>No usamos cookies de publicidad ni de seguimiento.</p>
+
+      <h2>Cómo cambiar tu elección</h2>
+      <p><button class="btn btn-ghost" type="button" id="resetCookies">Volver a elegir</button></p>
+      <p>También puedes borrar los datos del sitio desde la configuración de tu navegador.</p>
+
+      <h2>Más información</h2>
+      <p>Consulta nuestra <a href="privacidad.html">Política de tratamiento de datos personales</a>.</p>
+    </div>
+  </main>
+
+  <footer class="footer" data-legal-footer></footer>
+
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/footer.js"></script>
+  <script src="../assets/js/site.js"></script>
+  <script>
+    document.getElementById("resetCookies").addEventListener("click", function () {
+      try { localStorage.removeItem("tribu-cookies"); } catch (e) {}
+      location.reload();
+    });
+  </script>
+</body>
+</html>
