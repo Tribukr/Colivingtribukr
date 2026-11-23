@@ -1,5 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="TribuKR">
-  <circle cx="60" cy="60" r="56" fill="none" stroke="#6E9E8A" stroke-width="7"/>
-  <circle cx="60" cy="60" r="46" fill="#2E3436"/>
-  <text x="60" y="73" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="38" fill="#ffffff">KR</text>
+  <circle cx="60" cy="60" r="56" fill="none" stroke="#6E9E8A" stroke-width="5"/>
+  <circle cx="60" cy="60" r="49" fill="#2E3436"/>
+  <g transform="translate(2.03 27.29) scale(0.058)">
+    <rect x="506" y="601" width="277" height="364" fill="#ffffff"/>
+    <rect x="827" y="385" width="294" height="580" fill="#6E9E8A"/>
+    <rect x="1165" y="133" width="329" height="832" fill="#ffffff"/>
+    <rect x="406" y="970" width="1187" height="26" rx="13" fill="#ffffff"/>
+    <g fill="#2E3436">
+      <rect x="575" y="688" width="52" height="60"/><rect x="662" y="688" width="52" height="60"/>
+      <rect x="905" y="480" width="52" height="61"/><rect x="1000" y="480" width="52" height="61"/>
+      <rect x="905" y="619" width="52" height="61"/><rect x="1000" y="619" width="52" height="61"/>
+      <rect x="1243" y="237" width="61" height="70"/><rect x="1355" y="237" width="61" height="70"/>
+      <rect x="1243" y="393" width="61" height="70"/><rect x="1355" y="393" width="61" height="70"/>
+      <rect x="1243" y="549" width="61" height="70"/><rect x="1355" y="549" width="61" height="70"/>
+    </g>
+  </g>
 </svg>
