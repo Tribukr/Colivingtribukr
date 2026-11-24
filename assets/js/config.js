@@ -16,7 +16,7 @@ window.TRIBU_CONFIG = {
 
   // Enlaces de Airbnb (opcional). Si están vacíos, el botón no aparece.
   airbnb: {
-    capitolio: "" // enlace general del coliving en Airbnb
+    capitolio: "https://airbnb.com.co/h/tribukr" // enlace general del coliving en Airbnb
   },
 
   instagram: "", // ej: "https://instagram.com/tribukr"
