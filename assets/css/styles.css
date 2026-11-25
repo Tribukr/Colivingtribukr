@@ -115,15 +115,15 @@ body::after {
   border: 4px solid rgba(242,238,230,.06); z-index: 1;
 }
 .bubble img { width: 100%; height: 100%; object-fit: cover; }
-.bubble.b1 { width: clamp(180px, 26vw, 380px); aspect-ratio: 1; top: 17%; left: -5%; }
-.bubble.b2 { width: clamp(140px, 18vw, 280px); aspect-ratio: 1; top: 19%; right: 1%; }
-.bubble.b3 { width: clamp(160px, 22vw, 340px); aspect-ratio: 1; bottom: 2%; left: 8%; }
-.bubble.b4 { width: clamp(120px, 16vw, 240px); aspect-ratio: 1; bottom: 10%; right: 4%; }
+.bubble.b1 { width: clamp(180px, 26vw, 380px); aspect-ratio: 1; top: 15%; left: 4%; }
+.bubble.b2 { width: clamp(140px, 18vw, 280px); aspect-ratio: 1; top: 17%; right: 8%; }
+.bubble.b3 { width: clamp(160px, 22vw, 340px); aspect-ratio: 1; bottom: 3%; left: 9%; }
+.bubble.b4 { width: clamp(120px, 16vw, 240px); aspect-ratio: 1; bottom: 10%; right: 10%; }
 .hero__content { position: relative; z-index: 2; }
 .scroll-hint { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .scroll-hint i { width: 1px; height: 46px; background: linear-gradient(var(--sage), transparent); animation: drip 2s infinite; transform-origin: top; }
 @keyframes drip { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
-@media (max-width: 700px) { .bubble.b2, .bubble.b4 { display: none; } .bubble.b1 { width: 150px; top: 13%; left: -12%; } .bubble.b3 { width: 150px; bottom: 4%; left: auto; right: -10%; } }
+@media (max-width: 700px) { .bubble.b2, .bubble.b4 { display: none; } .bubble.b1 { width: 150px; top: 13%; left: -6%; } .bubble.b3 { width: 150px; bottom: 4%; left: auto; right: -4%; } }
 
 /* ---------- zoom pin (imagen que crece) ---------- */
 .zoom { height: 100svh; position: relative; overflow: hidden; display: grid; place-items: center; }
