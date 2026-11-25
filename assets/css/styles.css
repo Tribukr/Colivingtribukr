@@ -98,7 +98,11 @@ body::after {
 .nav__links a:hover { color: var(--ink); background: rgba(242,238,230,.06); }
 .nav .btn { padding: 10px 12px 10px 18px; font-size: 14px; }
 .nav .btn .dot { width: 26px; height: 26px; }
-@media (max-width: 860px) { .nav__links { display: none; } .nav .btn span.lbl { display: none; } .nav .btn { padding: 8px; } }
+@media (max-width: 860px) { .nav .btn span.lbl { display: none; } .nav .btn { padding: 8px; }
+  .nav { flex-wrap: wrap; row-gap: 10px; }
+  .nav__links { order: 3; width: 100%; justify-content: space-between; gap: 0; padding: 4px; overflow-x: auto; scrollbar-width: none; background: rgba(28,33,35,.88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .nav__links::-webkit-scrollbar { display: none; }
+  .nav__links a { padding: 7px 6px; font-size: 12.5px; white-space: nowrap; flex: 1 0 auto; text-align: center; } }
 
 /* ---------- hero marca ---------- */
 .hero { min-height: 100svh; display: grid; place-items: center; text-align: center; position: relative; overflow: hidden; padding: 120px var(--pad) 80px; }
@@ -118,12 +122,12 @@ body::after {
 .bubble.b1 { width: clamp(195px, min(31.5vw, 42vh), 480px); aspect-ratio: 1; top: 15%; left: 4.5%; }
 .bubble.b2 { width: clamp(150px, min(22.5vw, 34vh), 345px); aspect-ratio: 1; top: 15%; right: 9.5%; }
 .bubble.b3 { width: clamp(180px, min(27vw, 36vh), 420px); aspect-ratio: 1; bottom: 2%; left: 6.5%; }
-.bubble.b4 { width: clamp(135px, min(19.5vw, 29vh), 300px); aspect-ratio: 1; bottom: 8%; right: 11.5%; }
+.bubble.b4 { width: clamp(170px, min(25vw, 37vh), 390px); aspect-ratio: 1; bottom: 3%; right: 5.5%; }
 .hero__content { position: relative; z-index: 2; }
 .scroll-hint { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .scroll-hint i { width: 1px; height: 46px; background: linear-gradient(var(--sage), transparent); animation: drip 2s infinite; transform-origin: top; }
 @keyframes drip { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
-@media (max-width: 700px) { .bubble.b2, .bubble.b4 { display: none; } .bubble.b1 { width: 170px; top: 11%; left: -16%; } .bubble.b3 { width: 180px; bottom: 2%; left: auto; right: -9%; } }
+@media (max-width: 700px) { .bubble.b2, .bubble.b4 { display: none; } .bubble.b1 { width: 160px; top: 16%; left: -18%; } .bubble.b3 { width: 180px; bottom: 2%; left: auto; right: -9%; } }
 
 /* ---------- zoom pin (imagen que crece) ---------- */
 .zoom { height: 100svh; position: relative; overflow: hidden; display: grid; place-items: center; }
