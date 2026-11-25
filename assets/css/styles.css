@@ -127,7 +127,13 @@ body::after {
 .scroll-hint { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .scroll-hint i { width: 1px; height: 46px; background: linear-gradient(var(--sage), transparent); animation: drip 2s infinite; transform-origin: top; }
 @keyframes drip { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
-@media (max-width: 700px) { .bubble.b2, .bubble.b4 { display: none; } .bubble.b1 { width: 160px; top: 16%; left: -18%; } .bubble.b3 { width: 180px; bottom: 2%; left: auto; right: -9%; } }
+@media (max-width: 700px) {
+  .bubble { border-width: 3px; }
+  .bubble.b1 { width: 96px; top: max(150px, calc(50% - 276px)); bottom: auto; left: -48px; right: auto; }
+  .bubble.b2 { width: 96px; top: max(150px, calc(50% - 276px)); bottom: auto; right: -48px; left: auto; }
+  .bubble.b4 { width: 118px; top: calc(50% + 202px); bottom: auto; right: -24px; left: auto; }
+  .bubble.b3 { width: 118px; top: calc(50% + 250px); bottom: auto; left: -28px; right: auto; }
+}
 
 /* ---------- zoom pin (imagen que crece) ---------- */
 .zoom { height: 100svh; position: relative; overflow: hidden; display: grid; place-items: center; }
