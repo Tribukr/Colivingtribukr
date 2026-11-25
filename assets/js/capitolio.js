@@ -38,7 +38,7 @@
         const id = String(r[iHab] || "").replace(/\D/g, "");
         const room = D.rooms.find((x) => x.id === id);
         if (!room) return;
-        if (iEst > -1 && r[iEst]) room.estado = norm(r[iEst]).indexOf("disp") === 0 ? "disponible" : "ocupada";
+        if (iEst > -1 && r[iEst]) { const e = norm(r[iEst]); room.estado = e.indexOf("disp") === 0 ? "disponible" : e.indexOf("pront") === 0 ? "pronto" : "ocupada"; }
         if (iPre > -1 && r[iPre]) { const p = parseInt(String(r[iPre]).replace(/\D/g, ""), 10); if (p) room.precio = p; }
         if (iAir > -1 && r[iAir] && /^https?:\/\//.test(r[iAir].trim())) room.airbnb = r[iAir].trim();
       });
@@ -52,17 +52,19 @@
   let filter = "todas";
 
   function card(r) {
-    const ok = r.estado === "disponible";
+    const ok = r.estado === "disponible", soon = r.estado === "pronto";
     const msg = ok
       ? `Hola TribuKR, me interesa la habitación ${r.id} del Coliving Capitolio (${money(r.precio)}/mes). ¿Está disponible para visitarla?`
+      : soon
+      ? `Hola TribuKR, vi que la habitación ${r.id} del Coliving Capitolio se libera pronto (${money(r.precio)}/mes). ¿Desde qué fecha estaría disponible? Me gustaría apartarla.`
       : `Hola TribuKR, vi que la habitación ${r.id} del Coliving Capitolio está ocupada. ¿Me avisan cuando se libere?`;
     const bano = r.bano === "privado" ? "Baño privado" : `Baño compartido con la ${r.con}`;
     const air = r.airbnb || "";
     return `
-      <article class="room ${ok ? "" : "is-busy"}" data-id="${r.id}">
+      <article class="room ${ok ? "" : soon ? "is-soon" : "is-busy"}" data-id="${r.id}">
         <div class="room__img" data-open="${r.id}" role="button" tabindex="0" aria-label="Ver fotos de la habitación ${r.id}">
           <img src="${D.img(r.fotos[0])}" alt="Habitación ${r.id}" loading="lazy" />
-          <span class="pill ${ok ? "pill--ok" : "pill--busy"}"><span class="d"></span>${ok ? "Disponible" : "Ocupada"}</span>
+          <span class="pill ${ok ? "pill--ok" : soon ? "pill--pronto" : "pill--busy"}"><span class="d"></span>${ok ? "Disponible" : soon ? "Pronto" : "Ocupada"}</span>
           <span class="room__num">${r.id}</span>
           <span class="room__count">${r.fotos.length} fotos</span>
         </div>
@@ -75,7 +77,7 @@
           <div class="room__price"><b>${money(r.precio)}</b><span>/ mes · servicios incluidos</span></div>
           <div class="room__actions">
             <button type="button" data-open="${r.id}">Ver fotos</button>
-            <a class="wa" href="${window.waLink(msg)}" target="_blank" rel="noopener">${ok ? "La quiero" : "Avísame"}</a>
+            <a class="wa" href="${window.waLink(msg)}" target="_blank" rel="noopener">${ok ? "La quiero" : soon ? "Apártala" : "Avísame"}</a>
             ${air ? `<a href="${air}" target="_blank" rel="noopener" style="grid-column:1/-1">Reservar en Airbnb</a>` : ""}
           </div>
         </div>
@@ -124,10 +126,10 @@
     cur = D.rooms.find((r) => r.id === id); if (!cur) return;
     $("#gTitle").textContent = "Habitación " + cur.id;
     $("#gThumbs").innerHTML = cur.fotos.map((f, k) => `<img src="${D.img(f)}" data-k="${k}" alt="" />`).join("");
-    const ok = cur.estado === "disponible";
+    const ok = cur.estado === "disponible", soon = cur.estado === "pronto";
     const wa = $("#gWa");
     wa.href = window.waLink(`Hola TribuKR, me interesa la habitación ${cur.id} del Coliving Capitolio (${money(cur.precio)}/mes).`);
-    wa.querySelector(".lbl").textContent = ok ? "La quiero" : "Avísame cuando se libere";
+    wa.querySelector(".lbl").textContent = ok ? "La quiero" : soon ? "Apártala" : "Avísame cuando se libere";
     modal.classList.add("open"); document.body.style.overflow = "hidden"; window.__lenis && window.__lenis.stop();
     show(0);
   }
